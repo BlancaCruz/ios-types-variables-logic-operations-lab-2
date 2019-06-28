@@ -1,4 +1,4 @@
-# Types Variables Logic and Operations Lab 2
+# Types Variables Logic and Operations Lab 2 - Blanca Cruz
 
 ## Instructions for lab submission
 
@@ -15,13 +15,27 @@ You are given three grades obtained by 3 students, which are stored in variables
 Create a variable called `yourGrade` of type `Double` and give it a value.
 Print `"above average"` if your grade is greater than the class average or `"below average"` otherwise.
 
+
 ```swift
-var grade1 = 7.0
-var grade2 = 9.0
-var grade3 = 5.0
+var grade1: Double = 7.0
+var grade2: Double = 9.0
+var grade3: Double = 5.0
+
+var yourGrade: Double = 2.0
+
+var classAverage = (grade1 + grade2 + grade3 + yourGrade) / 4
+
+
+if yourGrade >= classAverage {
+print ("above average")
+} else {
+print ("below average")
+}
 
 // your code here
 ```
+
+
 
 ***
 ## Question 2
@@ -30,6 +44,12 @@ You are given a number. Print even if the number is even or odd otherwise.
 
 ```swift
 let number = 2
+
+if number % 2 == 0 {
+print ("even")
+} else {
+print ("odd")
+}
 
 // your code here
 ```
@@ -42,6 +62,12 @@ You are given two numbers `a` and `b`. Print `"divisible"` if `a` is divisible b
 ```swift
 var a = 12
 var b = 3
+
+if a % b == 0 {
+print ("divisible")
+} else {
+print ("not divisible")
+}
 
 // code here
 ```
@@ -56,6 +82,12 @@ var a = 2
 var b = 3
 var c = 2
 
+if a == b || a == c || b == c {
+print ("At least two variables have the same value")
+} else {
+print ("All the values are different.")
+}
+
 // your code here
 ```
 
@@ -68,6 +100,16 @@ You are working on a smart-fridge. The smart-fridge knows how old the eggs and b
 var baconAge = 6 // the bacon is 6 days old
 var eggsAge = 12 // eggs are 12 days old
 
+if  baconAge <= 7 && eggsAge <= 21 {
+print ("you can cook bacon and eggs.")
+} else if baconAge > 7 && eggsAge <= 21 {
+print ("throw out bacon")
+} else if baconAge <= 7 && eggsAge > 21 {
+print ( "throw out egg")
+} else {
+print ("Both bacon and eggs are bad.")
+}
+
 // your code here
 ```
 
@@ -78,7 +120,13 @@ You are given a year, determine if it’s a leap year. A leap year is a year con
 The above rule is valid except that every 100 years special rules apply. Years that are divisible by 100 are not leap years if they are not also divisible by 400. For example 1900 was not a leap year, but 2000 was. Print `"Leap year!"` or `"Not a leap year!"` depending on the year you are provided.
 
 ```swift
-let year = 2014
+let year = 2001
+
+if year % 100 == 0 && year % 400 != 0 || year % 4 == 0 {
+print ("Leap year!")
+} else {
+print ("Not a leap year!")
+}
 
 // your code here
 ```
@@ -90,6 +138,12 @@ If you use `random()` it will give you a random number within a specified range.
 
 ```swift
 let randomNum = Int.random(in: 0...100)
+
+if randomNum % 2 == 0 {
+print ("heads")
+} else {
+print ("tails")
+}
 
 // your code here
 ```
@@ -106,6 +160,16 @@ var a = 5
 var b = 6
 var c = 3
 var d = 4
+
+if a < b && a < c && a < d {
+print (a)
+} else if b < a && b < c && b < d {
+print (b)
+} else if c < a && c < b && c < d {
+print (c)
+} else if d < a && d < b && a < c {
+print (d)
+}
 
 // your code here
 ```
